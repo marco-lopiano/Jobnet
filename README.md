@@ -2,7 +2,7 @@
 
 A Python tool for fetching, filtering, and managing vfx, animation and games job postings with both a graphical and command-line interface.
 
-This tool relies heavily on the amazing work done by Chris Mayne on [**Animation/VFX/Game Industry Job Posting**](https://docs.google.com/spreadsheets/d/1eR2oAXOuflr8CZeGoz3JTrsgNj3KuefbdXJOmNtjEVM/edit?gid=0#gid=0)
+This tool relies heavily on the amazing work done by Chris Mayne on [**Animation/VFX/Game Industry Job Postings**](https://docs.google.com/spreadsheets/d/1eR2oAXOuflr8CZeGoz3JTrsgNj3KuefbdXJOmNtjEVM/edit?gid=0#gid=0)
 
 ![alt text](./screenshots/Screenshot_main.png "Main")
 
