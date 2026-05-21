@@ -15,7 +15,7 @@ This tool relies heavily on the amazing work done by Chris Mayne on [**Animation
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/marco-lopiano/Jobnet.git
 cd jobnet/code
 ```
 
