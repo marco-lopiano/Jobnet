@@ -41,6 +41,7 @@ def _filterMostRecent(database):
 
     return out
 
+# TODO: remove this
 def oldFilter(database, filters=[], columnsToFilter=[]):
     """
     Old method of filtering
@@ -115,7 +116,7 @@ def advancedFilter(database, filters=[], columnsToFilter=[], mostRecent=False):
     """
 
     if (len(filters) == 0 or len(columnsToFilter) == 0) and mostRecent == False:
-        return pd.DataFrame()
+        return database
     
     baseCondition = r"{}.str.lower().str.contains('{}'.lower(), na=False)"
 
