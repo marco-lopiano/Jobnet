@@ -122,7 +122,6 @@ Key packages include:
 - **pandas** - Data manipulation
 - **pygsheets** - Google Sheets API client
 - **folium** - Map visualization
-- **fuzzywuzzy** - Fuzzy string matching
 
 See `requirements.txt` for complete list.
 
