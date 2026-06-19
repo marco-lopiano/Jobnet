@@ -30,7 +30,8 @@ class CustomFilterList(QListWidget):
 class JobScanner(QMainWindow):
     def __init__(self):
         super(JobScanner, self).__init__()
-        self.columns = ['Studio', 'City', 'Country', 'Job Title', 'Date', 'Source/Contact']
+        # self.columns = ['Studio', 'City', 'Country', 'Job Title', 'Date', 'Source/Contact']
+        self.columns = ['Studio','City', 'Country', 'Job Title', 'Contract Type', 'Date', 'Source/Contact' ]
 
         self.database = database.main()
 
@@ -161,9 +162,17 @@ class JobScanner(QMainWindow):
             self.Result = QTableView() # for spreadsheet view
             self.Result.setModel(self.model)
 
-            self.Result.horizontalHeader().setSectionResizeMode(5, QHeaderView.ResizeMode.Stretch)
-            self.Result.horizontalHeader().setSectionResizeMode(4, QHeaderView.ResizeMode.ResizeToContents)
-
+            try:
+                source_idx = self.columns.index('Source/Contact')
+                self.Result.horizontalHeader().setSectionResizeMode(source_idx, QHeaderView.ResizeMode.Stretch)
+                
+                date_idx = self.columns.index('Date')
+                self.Result.horizontalHeader().setSectionResizeMode(date_idx, QHeaderView.ResizeMode.ResizeToContents)
+                
+                contract_idx = self.columns.index('Contract Type')
+                self.Result.horizontalHeader().setSectionResizeMode(contract_idx, QHeaderView.ResizeMode.ResizeToContents)
+            except ValueError:
+                pass
 
             self.Result.verticalHeader().hide()
 
