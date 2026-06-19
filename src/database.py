@@ -17,7 +17,7 @@ load_dotenv(dotenv_path)
 #TODO create args for this module for cli
 
 # GLOBALS
-COLUMNS = ['Studio','City', 'Country','Job Title', 'Date', 'Source/Contact' ]
+COLUMNS = ['Studio','City', 'Country', 'Job Title', 'Contract Type', 'Date', 'Source/Contact' ]
 
 def authenticate():
     """
@@ -111,7 +111,8 @@ def getNewDatabase(db):
         - None or str
     """
     db.rename(columns={'Studio\n(Featured listings in blue)\n(Most recent in orange)':'Studio'}, inplace=True)
-    db.drop(db.columns.difference(['Studio','City', 'Country','Job Title', 'Date', 'Source/Contact' ]), axis=1, inplace=True)
+    db.rename(columns={' On-Site/\nRemote/Hybrid':'Contract Type'}, inplace=True)
+    db.drop(db.columns.difference(COLUMNS), axis=1, inplace=True)
     db.reset_index(drop=True) #TODO: investigate as this could be wrongly used here
     db.dropna(inplace=True)
     return db
@@ -164,6 +165,7 @@ def main(force=False):
 
 
 if __name__ == '__main__':
-    # main(force=False)
+    # t = main(force=True)
     client = authenticate()
     t = getUpdated(client)
+    print(t.columns)
